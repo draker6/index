@@ -1,0 +1,1726 @@
+
+
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Hacked by NESAS_0DAY & berofc</title> 
+  <meta name="keywords" content="Hacked By harunts.2-bl00cold-cyprusofficial"> 
+  <meta name="description" content="harunts.2| Hacked"> 
+  <meta property="og:image" content=""> 
+  <link rel="icon" href="https://websky.com.tr/1.jpg"> 
+  <meta name="robots" content="index, follow"> 
+  <meta name="googlebot" content="index,follow"> 
+  <meta property="og:type" content="website"> 
+  <meta name="robots" content="all">
+  <meta name="robots schedule" content="auto"> 
+  <meta name="distribution" content="global">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani&amp;display=swap" rel="stylesheet" type="text/css"> 
+  <base target="_blank">
+ </head>
+ <body oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;" onkeydown="if (!window.__cfRLUnblockHandlers) return false; return false;" onmousedown="if (!window.__cfRLUnblockHandlers) return false; return false;" data-cf-modified-ce222c656afc4da03b6a67db-="">
+  <center> 
+   <link href="http://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet" type="text/css"> 
+   <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"> 
+   <meta name="distribution" content="global">
+   <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono|Rajdhani|Oswald:700|Iceland|PT+Sans&amp;display=swap" rel="stylesheet" type="text/css">
+   <meta name="viewport" content="width=device-width"> 
+   <style type="text/css">
+    * {
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        -ms-user-select: text !important;
+        user-select: text !important;
+    }
+</style>
+
+   <div id="particles-js"> 
+    <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="360" height="597"></canvas> 
+   </div> 
+   <div class="texture"></div> 
+   <div class="texture2"></div> 
+   <style>
+  .texture {
+    color: #000;
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   position: relative;
+   font-family: 'Rajdhani', sans-serif;
+   background-image: url("https://websky.com.tr/1.jpg");
+   background-color:#000000;
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 3px 3px 2px black, 6px 6px 5px black, 6px 6px 5px black;
+  a:visited, a:hover, a:focus {
+    text-decoration: none;
+    color: white;
+  }
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -5;
+    z-index: -100;
+    background: url(https://websky.com.tr/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  .texture2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    background-color: black;
+        opacity: 0.6;
+}
+  </style> 
+   <script type="text/javascript">
+var snowStorm = null;
+function SnowStorm() {
+  this.flakesMax = 128;         
+  this.flakesMaxActive = 64;     
+  this.animationInterval = 33;   
+  this.flakeBottom = null;
+  this.targetElement = null;
+  this.followMouse = true; 
+  this.snowColor = 'red';      
+  this.snowCharacter = '&bull;'; 
+  this.snowStick = true;      
+  this.useMeltEffect = true; 
+  this.useTwinkleEffect = false;  
+  this.usePositionFixed = false; 
+  this.flakeLeftOffset = 0;     
+  this.flakeRightOffset = 0;    
+  this.flakeWidth = 8;       
+  this.flakeHeight = 8;     
+  this.vMaxX = 5;           
+  this.vMaxY = 4;       
+  this.zIndex = 0;       
+  var addEvent = (typeof(window.attachEvent)=='undefined'?function(o,evtName,evtHandler) {
+  return o.addEventListener(evtName,evtHandler,false);
+  }:function(o,evtName,evtHandler) {
+  return o.attachEvent('on'+evtName,evtHandler);
+  });
+
+  var removeEvent = (typeof(window.attachEvent)=='undefined'?function(o,evtName,evtHandler) {
+    return o.removeEventListener(evtName,evtHandler,false);
+  }:function(o,evtName,evtHandler) {
+  return o.detachEvent('on'+evtName,evtHandler);
+  });
+
+  function rnd(n,min) {
+    if (isNaN(min)) {
+    min = 0;
+  }
+    return (Math.random()*n)+min;
+  }
+
+  function plusMinus(n) {
+    return (parseInt(rnd(2),10)==1?n*-1:n);
+  }
+
+  var s = this;
+  var storm = this;
+  this.timers = [];
+  this.flakes = [];
+  this.disabled = false;
+  this.active = false;
+
+  var isIE = navigator.userAgent.match(/msie/i);
+  var isIE6 = navigator.userAgent.match(/msie 6/i);
+  var isOldIE = (isIE && (isIE6 || navigator.userAgent.match(/msie 5/i)));
+  var isWin9X = navigator.appVersion.match(/windows 98/i);
+  var isiPhone = navigator.userAgent.match(/iphone/i);
+  var isBackCompatIE = (isIE && document.compatMode == 'BackCompat');
+  var noFixed = ((isBackCompatIE || isIE6 || isiPhone)?true:false);
+  var screenX = null;
+  var screenX2 = null;
+  var screenY = null;
+  var scrollY = null;
+  var vRndX = null;
+  var vRndY = null;
+  var windOffset = 1;
+  var windMultiplier = 2;
+  var flakeTypes = 6;
+  var fixedForEverything = false;
+  var opacitySupported = (function(){
+    try {
+    document.createElement('div').style.opacity = '0.5';
+    } catch (e) {
+    return false;
+    }
+    return true;
+  })();
+  var docFrag = document.createDocumentFragment();
+  if (s.flakeLeftOffset === null) {
+  s.flakeLeftOffset = 0;
+  }
+  if (s.flakeRightOffset === null) {
+  s.flakeRightOffset = 0;
+  }
+
+  this.meltFrameCount = 20;
+  this.meltFrames = [];
+  for (var i=0; i<this.meltFrameCount; i++) {
+  this.meltFrames.push(1-(i/this.meltFrameCount));
+  }
+
+  this.randomizeWind = function() {
+    vRndX = plusMinus(rnd(s.vMaxX,0.2));
+    vRndY = rnd(s.vMaxY,0.2);
+    if (this.flakes) {
+      for (var i=0; i<this.flakes.length; i++) {
+        if (this.flakes[i].active) {
+          this.flakes[i].setVelocities();
+    }
+      }
+    }
+  };
+
+  this.scrollHandler = function() {
+    // "attach" snowflakes to bottom of window if no absolute bottom value was given
+    scrollY = (s.flakeBottom?0:parseInt(window.scrollY||document.documentElement.scrollTop||document.body.scrollTop,10));
+    if (isNaN(scrollY)) {
+    scrollY = 0; // Netscape 6 scroll fix
+  }
+    if (!fixedForEverything && !s.flakeBottom && s.flakes) {
+      for (var i=s.flakes.length; i--;) {
+        if (s.flakes[i].active === 0) {
+        s.flakes[i].stick();
+    }
+      }
+    }
+  };
+
+  this.resizeHandler = function() {
+    if (window.innerWidth || window.innerHeight) {
+      screenX = window.innerWidth-(!isIE?16:2)-s.flakeRightOffset;
+      screenY = (s.flakeBottom?s.flakeBottom:window.innerHeight);
+    } else {
+      screenX = (document.documentElement.clientWidth||document.body.clientWidth||document.body.scrollWidth)-(!isIE?8:0)-s.flakeRightOffset;
+      screenY = s.flakeBottom?s.flakeBottom:(document.documentElement.clientHeight||document.body.clientHeight||document.body.scrollHeight);
+    }
+    screenX2 = parseInt(screenX/2,10);
+  };
+
+  this.resizeHandlerAlt = function() {
+    screenX = s.targetElement.offsetLeft+s.targetElement.offsetWidth-s.flakeRightOffset;
+    screenY = s.flakeBottom?s.flakeBottom:s.targetElement.offsetTop+s.targetElement.offsetHeight;
+    screenX2 = parseInt(screenX/2,10);
+  };
+
+  this.freeze = function() {
+    // pause animation
+    if (!s.disabled) {
+      s.disabled = 1;
+    } else {
+      return false;
+    }
+    for (var i=s.timers.length; i--;) {
+      clearInterval(s.timers[i]);
+    }
+  };
+
+  this.resume = function() {
+    if (s.disabled) {
+       s.disabled = 0;
+    } else {
+      return false;
+    }
+    s.timerInit();
+  };
+
+  this.toggleSnow = function() {
+    if (!s.flakes.length) {
+      // first run
+      s.start();
+    } else {
+      s.active = !s.active;
+      if (s.active) {
+        s.show();
+        s.resume();
+      } else {
+        s.stop();
+        s.freeze();
+      }
+    }
+  };
+
+  this.stop = function() {
+    this.freeze();
+    for (var i=this.flakes.length; i--;) {
+      this.flakes[i].o.style.display = 'none';
+    }
+    removeEvent(window,'scroll',s.scrollHandler);
+    removeEvent(window,'resize',s.resizeHandler);
+    if (!isOldIE) {
+      removeEvent(window,'blur',s.freeze);
+      removeEvent(window,'focus',s.resume);
+    }
+  };
+
+  this.show = function() {
+    for (var i=this.flakes.length; i--;) {
+      this.flakes[i].o.style.display = 'block';
+    }
+  };
+
+  this.SnowFlake = function(parent,type,x,y) {
+    var s = this;
+    var storm = parent;
+    this.type = type;
+    this.x = x||parseInt(rnd(screenX-20),10);
+    this.y = (!isNaN(y)?y:-rnd(screenY)-12);
+    this.vX = null;
+    this.vY = null;
+    this.vAmpTypes = [1,1.2,1.4,1.6,1.8]; // "amplification" for vX/vY (based on flake size/type)
+    this.vAmp = this.vAmpTypes[this.type];
+    this.melting = false;
+    this.meltFrameCount = storm.meltFrameCount;
+    this.meltFrames = storm.meltFrames;
+    this.meltFrame = 0;
+    this.twinkleFrame = 0;
+    this.active = 1;
+    this.fontSize = (10+(this.type/5)*10);
+    this.o = document.createElement('div');
+    this.o.innerHTML = storm.snowCharacter;
+    this.o.style.color = storm.snowColor;
+    this.o.style.position = (fixedForEverything?'fixed':'absolute');
+    this.o.style.width = storm.flakeWidth+'px';
+    this.o.style.height = storm.flakeHeight+'px';
+    this.o.style.fontFamily = 'arial,verdana';
+    this.o.style.overflow = 'hidden';
+    this.o.style.fontWeight = 'normal';
+    this.o.style.zIndex = storm.zIndex;
+    docFrag.appendChild(this.o);
+
+    this.refresh = function() {
+    if (isNaN(s.x) || isNaN(s.y)) {
+    // safety check
+    return false;
+    }
+      s.o.style.left = s.x+'px';
+      s.o.style.top = s.y+'px';
+    };
+
+    this.stick = function() {
+      if (noFixed || (storm.targetElement != document.documentElement && storm.targetElement != document.body)) {
+        s.o.style.top = (screenY+scrollY-storm.flakeHeight)+'px';
+      } else if (storm.flakeBottom) {
+      s.o.style.top = storm.flakeBottom+'px';
+    } else {
+        s.o.style.display = 'none';
+      s.o.style.top = 'auto';
+        s.o.style.bottom = '0px';
+      s.o.style.position = 'fixed';
+        s.o.style.display = 'block';
+      }
+    };
+
+    this.vCheck = function() {
+      if (s.vX>=0 && s.vX<0.2) {
+        s.vX = 0.2;
+      } else if (s.vX<0 && s.vX>-0.2) {
+        s.vX = -0.2;
+      }
+      if (s.vY>=0 && s.vY<0.2) {
+        s.vY = 0.2;
+      }
+    };
+
+    this.move = function() {
+      var vX = s.vX*windOffset;
+      s.x += vX;
+      s.y += (s.vY*s.vAmp);
+      if (s.x >= screenX || screenX-s.x < storm.flakeWidth) { // X-axis scroll check
+        s.x = 0;
+      } else if (vX < 0 && s.x-storm.flakeLeftOffset<0-storm.flakeWidth) {
+        s.x = screenX-storm.flakeWidth-1; // flakeWidth;
+      }
+      s.refresh();
+      var yDiff = screenY+scrollY-s.y;
+      if (yDiff<storm.flakeHeight) {
+        s.active = 0;
+      if (storm.snowStick) {
+          s.stick();
+      } else {
+        s.recycle();
+      }
+      } else {
+      if (storm.useMeltEffect && s.active && s.type < 3 && !s.melting && Math.random()>0.998) {
+        // ~1/1000 chance of melting mid-air, with each frame
+        s.melting = true;
+        s.melt();
+        // only incrementally melt one frame
+        // s.melting = false;
+      }
+      if (storm.useTwinkleEffect) {
+      if (!s.twinkleFrame) {
+      if (Math.random()>0.9) {
+          s.twinkleFrame = parseInt(Math.random()*20,10);
+        }
+      } else {
+      s.twinkleFrame--;
+      s.o.style.visibility = (s.twinkleFrame && s.twinkleFrame%2===0?'hidden':'visible');
+      }
+      }
+      }
+    };
+
+    this.animate = function() {
+      // main animation loop
+      // move, check status, die etc.
+      s.move();
+    };
+
+    this.setVelocities = function() {
+      s.vX = vRndX+rnd(storm.vMaxX*0.12,0.1);
+      s.vY = vRndY+rnd(storm.vMaxY*0.12,0.1);
+    };
+
+  this.setOpacity = function(o,opacity) {
+    if (!opacitySupported) {
+    return false;
+    }
+    o.style.opacity = opacity;
+  };
+
+    this.melt = function() {
+    if (!storm.useMeltEffect || !s.melting) {
+    s.recycle();
+    } else {
+    if (s.meltFrame < s.meltFrameCount) {
+      s.meltFrame++;
+      s.setOpacity(s.o,s.meltFrames[s.meltFrame]);
+      s.o.style.fontSize = s.fontSize-(s.fontSize*(s.meltFrame/s.meltFrameCount))+'px';
+      s.o.style.lineHeight = storm.flakeHeight+2+(storm.flakeHeight*0.75*(s.meltFrame/s.meltFrameCount))+'px';
+    } else {
+      s.recycle();
+    }
+    }
+    };
+
+    this.recycle = function() {
+      s.o.style.display = 'none';
+      s.o.style.position = (fixedForEverything?'fixed':'absolute');
+      s.o.style.bottom = 'auto';
+      s.setVelocities();
+      s.vCheck();
+    s.meltFrame = 0;
+    s.melting = false;
+    s.setOpacity(s.o,1);
+    s.o.style.padding = '0px';
+    s.o.style.margin = '0px';
+    s.o.style.fontSize = s.fontSize+'px';
+    s.o.style.lineHeight = (storm.flakeHeight+2)+'px';
+    s.o.style.textAlign = 'center';
+    s.o.style.verticalAlign = 'baseline';
+      s.x = parseInt(rnd(screenX-storm.flakeWidth-20),10);
+      s.y = parseInt(rnd(screenY)*-1,10)-storm.flakeHeight;
+      s.refresh();
+      s.o.style.display = 'block';
+      s.active = 1;
+    };
+
+    this.recycle(); // set up x/y coords etc.
+    this.refresh();
+
+  };
+
+  this.snow = function() {
+    var active = 0;
+    var used = 0;
+    var waiting = 0;
+    var flake = null;
+    for (var i=s.flakes.length; i--;) {
+      if (s.flakes[i].active == 1) {
+        s.flakes[i].move();
+        active++;
+      } else if (s.flakes[i].active === 0) {
+        used++;
+      } else {
+        waiting++;
+      }
+      if (s.flakes[i].melting) {
+      s.flakes[i].melt();
+    }
+    }
+    if (active<s.flakesMaxActive) {
+      flake = s.flakes[parseInt(rnd(s.flakes.length),10)];
+      if (flake.active === 0) {
+        flake.melting = true;
+      }
+    }
+  };
+
+  this.mouseMove = function(e) {
+    if (!s.followMouse) {
+    return true;
+  }
+    var x = parseInt(e.clientX,10);
+    if (x<screenX2) {
+      windOffset = -windMultiplier+(x/screenX2*windMultiplier);
+    } else {
+      x -= screenX2;
+      windOffset = (x/screenX2)*windMultiplier;
+    }
+  };
+
+  this.createSnow = function(limit,allowInactive) {
+    for (var i=0; i<limit; i++) {
+      s.flakes[s.flakes.length] = new s.SnowFlake(s,parseInt(rnd(flakeTypes),10));
+      if (allowInactive || i>s.flakesMaxActive) {
+      s.flakes[s.flakes.length-1].active = -1;
+    }
+    }
+    storm.targetElement.appendChild(docFrag);
+  };
+
+  this.timerInit = function() {
+    s.timers = (!isWin9X?[setInterval(s.snow,s.animationInterval)]:[setInterval(s.snow,s.animationInterval*3),setInterval(s.snow,s.animationInterval)]);
+  };
+
+  this.init = function() {
+    s.randomizeWind();
+    s.createSnow(s.flakesMax); // create initial batch
+    addEvent(window,'resize',s.resizeHandler);
+    addEvent(window,'scroll',s.scrollHandler);
+    if (!isOldIE) {
+      addEvent(window,'blur',s.freeze);
+      addEvent(window,'focus',s.resume);
+    }
+    s.resizeHandler();
+    s.scrollHandler();
+    if (s.followMouse) {
+      addEvent(document,'mousemove',s.mouseMove);
+    }
+    s.animationInterval = Math.max(20,s.animationInterval);
+    s.timerInit();
+  };
+
+  var didInit = false;
+
+  this.start = function(bFromOnLoad) {
+  if (!didInit) {
+    didInit = true;
+  } else if (bFromOnLoad) {
+    // already loaded and running
+    return true;
+  }
+    if (typeof s.targetElement == 'string') {
+    var targetID = s.targetElement;
+      s.targetElement = document.getElementById(targetID);
+      if (!s.targetElement) {
+      throw new Error('Snowstorm: Unable to get targetElement "'+targetID+'"');
+    }
+    }
+  if (!s.targetElement) {
+    s.targetElement = (!isIE?(document.documentElement?document.documentElement:document.body):document.body);
+  }
+    if (s.targetElement != document.documentElement && s.targetElement != document.body) {
+    s.resizeHandler = s.resizeHandlerAlt; // re-map handler to get element instead of screen dimensions
+  }
+    s.resizeHandler(); // get bounding box elements
+    s.usePositionFixed = (s.usePositionFixed && !noFixed); // whether or not position:fixed is supported
+    fixedForEverything = s.usePositionFixed;
+    if (screenX && screenY && !s.disabled) {
+      s.init();
+      s.active = true;
+    }
+  };
+
+  function doStart() {
+    s.start(true);
+  }
+
+  if (document.addEventListener) {
+    // safari 3.0.4 doesn't do DOMContentLoaded, maybe others - use a fallback to be safe.
+    document.addEventListener('DOMContentLoaded',doStart,false);
+    window.addEventListener('load',doStart,false);
+  } else {
+    addEvent(window,'load',doStart);
+  }
+
+}
+snowStorm = new SnowStorm();
+
+function IE(e) {
+     if (navigator.appName == "Microsoft Internet Explorer" && (event.button == "2" || event.button == "3")) {
+          return false;
+     }
+}
+function NS(e) {
+     if (document.layers || (document.getElementById && !document.all)) {
+          if (e.which == "2" || e.which == "3") {
+               return false;
+          }
+     }
+}
+document.onmousedown=IE;document.onmouseup=NS;document.oncontextmenu=new Function("return false");
+
+
+
+(function() {
+  var canvas, ctx, circ, nodes, mouse, SENSITIVITY, SIBLINGS_LIMIT, DENSITY, NODES_QTY, ANCHOR_LENGTH, MOUSE_RADIUS;
+
+  SENSITIVITY = 100;
+
+  SIBLINGS_LIMIT = 10;
+
+  DENSITY = 50;
+
+  NODES_QTY = 0;
+
+  ANCHOR_LENGTH = 20;
+
+  MOUSE_RADIUS = 200;
+
+  circ = 2 * Math.PI;
+  nodes = [];
+
+  canvas = document.querySelector('canvas');
+  resizeWindow();
+  mouse = {
+    x: canvas.width / 2,
+    y: canvas.height / 2
+  };
+  ctx = canvas.getContext('2d');
+  if (!ctx) {
+    alert("Ooops! Your browser does not support canvas :'(");
+  }
+
+  function Node(x, y) {
+    this.anchorX = x;
+    this.anchorY = y;
+    this.x = Math.random() * (x - (x - ANCHOR_LENGTH)) + (x - ANCHOR_LENGTH);
+    this.y = Math.random() * (y - (y - ANCHOR_LENGTH)) + (y - ANCHOR_LENGTH);
+    this.vx = Math.random() * 2 - 1;
+    this.vy = Math.random() * 2 - 1;
+    this.energy = Math.random() * 100;
+    this.radius = Math.random();
+    this.siblings = [];
+    this.brightness = 0;
+  }
+
+  Node.prototype.drawNode = function() {
+    var color = "rgba(255, 0, 0, " + this.brightness + ")";
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 2 * this.radius + 2 * this.siblings.length / SIBLINGS_LIMIT, 0, circ);
+    ctx.fillStyle = color;
+    ctx.fill();
+  };
+
+  Node.prototype.drawConnections = function() {
+    for (var i = 0; i < this.siblings.length; i++) {
+      var color = "rgba(255, 0, 0, " + this.brightness + ")";
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.siblings[i].x, this.siblings[i].y);
+      ctx.lineWidth = 1 - calcDistance(this, this.siblings[i]) / SENSITIVITY;
+      ctx.strokeStyle = color;
+      ctx.stroke();
+    }
+  };
+
+  Node.prototype.moveNode = function() {
+    this.energy -= 2;
+    if (this.energy < 1) {
+      this.energy = Math.random() * 100;
+      if (this.x - this.anchorX < -ANCHOR_LENGTH) {
+        this.vx = Math.random() * 2;
+      } else if (this.x - this.anchorX > ANCHOR_LENGTH) {
+        this.vx = Math.random() * -2;
+      } else {
+        this.vx = Math.random() * 4 - 2;
+      }
+      if (this.y - this.anchorY < -ANCHOR_LENGTH) {
+        this.vy = Math.random() * 2;
+      } else if (this.y - this.anchorY > ANCHOR_LENGTH) {
+        this.vy = Math.random() * -2;
+      } else {
+        this.vy = Math.random() * 4 - 2;
+      }
+    }
+    this.x += this.vx * this.energy / 100;
+    this.y += this.vy * this.energy / 100;
+  };
+
+  function initNodes() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    nodes = [];
+    for (var i = DENSITY; i < canvas.width; i += DENSITY) {
+      for (var j = DENSITY; j < canvas.height; j += DENSITY) {
+        nodes.push(new Node(i, j));
+        NODES_QTY++;
+      }
+    }
+  }
+
+  function calcDistance(node1, node2) {
+    return Math.sqrt(Math.pow(node1.x - node2.x, 2) + (Math.pow(node1.y - node2.y, 2)));
+  }
+
+  function findSiblings() {
+    var node1, node2, distance;
+    for (var i = 0; i < NODES_QTY; i++) {
+      node1 = nodes[i];
+      node1.siblings = [];
+      for (var j = 0; j < NODES_QTY; j++) {
+        node2 = nodes[j];
+        if (node1 !== node2) {
+          distance = calcDistance(node1, node2);
+          if (distance < SENSITIVITY) {
+            if (node1.siblings.length < SIBLINGS_LIMIT) {
+              node1.siblings.push(node2);
+            } else {
+              var node_sibling_distance = 0;
+              var max_distance = 0;
+              var s;
+              for (var k = 0; k < SIBLINGS_LIMIT; k++) {
+                node_sibling_distance = calcDistance(node1, node1.siblings[k]);
+                if (node_sibling_distance > max_distance) {
+                  max_distance = node_sibling_distance;
+                  s = k;
+                }
+              }
+              if (distance < max_distance) {
+                node1.siblings.splice(s, 1);
+                node1.siblings.push(node2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function redrawScene() {
+    resizeWindow();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    findSiblings();
+    var i, node, distance;
+    for (i = 0; i < NODES_QTY; i++) {
+      node = nodes[i];
+      distance = calcDistance({
+        x: mouse.x,
+        y: mouse.y
+      }, node);
+      if (distance < MOUSE_RADIUS) {
+        node.brightness = 1 - distance / MOUSE_RADIUS;
+      } else {
+        node.brightness = 0;
+      }
+    }
+    for (i = 0; i < NODES_QTY; i++) {
+      node = nodes[i];
+      if (node.brightness) {
+        node.drawNode();
+        node.drawConnections();
+      }
+      node.moveNode();
+    }
+    requestAnimationFrame(redrawScene);
+  }
+
+  function initHandlers() {
+    document.addEventListener('resize', resizeWindow, false);
+    canvas.addEventListener('mousemove', mousemoveHandler, false);
+  }
+
+  function resizeWindow() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function mousemoveHandler(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  }
+
+  initHandlers();
+  initNodes();
+  redrawScene();
+})();
+</script> 
+<script type="text/javascript">
+  var interactivity = {
+      "detect_on": "window",
+      "events": {
+          "onhover": {
+              "enable": true,
+              "mode": "bubble"
+          }
+      }
+  };
+  </script>
+   <style>
+html {
+height: 100%
+}
+body {
+    background-color: transparent;
+}
+      .ico {
+        width:250px;
+        height:250px;
+        margin:0;
+        padding:0;
+      }
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    opacity: 0.5;
+}
+            #xx {
+        width: 100%;
+        height: 100%; 
+        background-size: cover; 
+        background-position: 50% 50%; 
+        position: fixed; 
+        top: 0px; 
+        z-index:1;
+      } 
+      @keyframes blikk{
+        0% {
+          color: darkred;
+          text-shadow: #fff 0px 0px 10px;
+        }
+        50% {
+          color: white;
+          text-shadow: darkred 0px 0px 10px;
+        }
+        100% {
+          color: darkred;
+          text-shadow: #fff 0px 0px 10px;
+        }
+      }
+    img.tengah {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+html {cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym46.cur?raw=true), auto;}
+</style> 
+   <div id="xxx"> 
+    <style>
+html {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 0.1px;
+}
+.example::-webkit-scrollbar {
+  display: none;
+}
+.example {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body {
+   /* overflow-y: hidden; Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 3rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+   font-family: 'Rajdhani', sans-serif;
+  a { text-decoration: none; color:white; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+}
+.animated-button3 {
+  width: 150px;
+      height: 60px;
+  background: linear-gradient(-30deg, #3d3d0b 50%, #2b2b08 50%);
+  padding: 20px 40px;
+  margin: 12px;
+  display: inline-block;
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+  overflow: hidden;
+  color: #ffffff;
+  acolor: #f7f7d4;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-align: center;
+  text-decoration: none;
+   font-family: 'Rajdhani', sans-serif;
+  -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  a:visited, a:hover, a:focus {
+    text-decoration: none;
+    color: #000;
+}
+}
+
+.animated-button3::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #adad85;
+  opacity: 0;
+  -webkit-transition: .2s opacity ease-in-out;
+  transition: .2s opacity ease-in-out;
+}
+
+.animated-button3:hover::before {
+  opacity: 0.2;
+}
+
+.animated-button3 span {
+  position: absolute;
+}
+
+.animated-button3 span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(43, 43, 8, 0)), to(#d9d926));
+  background: linear-gradient(to left, rgba(43, 43, 8, 0), #d9d926);
+  -webkit-animation: 2s animateTop linear infinite;
+          animation: 2s animateTop linear infinite;
+}
+
+@keyframes animateTop {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+.animated-button3 span:nth-child(2) {
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 2px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 43, 8, 0)), to(#d9d926));
+  background: linear-gradient(to top, rgba(43, 43, 8, 0), #d9d926);
+  -webkit-animation: 2s animateRight linear -1s infinite;
+          animation: 2s animateRight linear -1s infinite;
+}
+
+@keyframes animateRight {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+.animated-button3 span:nth-child(3) {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(43, 43, 8, 0)), to(#d9d926));
+  background: linear-gradient(to right, rgba(43, 43, 8, 0), #d9d926);
+  -webkit-animation: 2s animateBottom linear infinite;
+          animation: 2s animateBottom linear infinite;
+}
+
+@keyframes animateBottom {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+.animated-button3 span:nth-child(4) {
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 2px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 43, 8, 0)), to(#d9d926));
+  background: linear-gradient(to bottom, rgba(43, 43, 8, 0), #d9d926);
+  -webkit-animation: 2s animateLeft linear -1s infinite;
+          animation: 2s animateLeft linear -1s infinite;
+}
+
+@keyframes animateLeft {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+/*# 1877 */
+</style> 
+    <style>
+@import "https://fonts.googleapis.com/earlyaccess/droidarabickufi.css";
+a:visited, a:hover, a:focus {
+    text-decoration: none;
+    color: white;
+}
+animated-button3 {
+   font-family: 'Rajdhani', sans-serif;
+}
+</style> 
+    <style>
+.gambargetar{position:relative}
+img:hover{opacity:1}textarea{resize:none}
+img {
+    position:relative;opacity:1.0
+}
+</style> 
+<style type="text/css">
+@media only screen and (max-device-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    body {
+        position: relative;
+        font-family: 'Rajdhani', sans-serif;
+    }
+    img {    
+        width: 100%; /* Düzgün yazım */
+        position: relative;
+        margin: 0; /* Negatif değeri kaldırdık */
+    }
+}
+</style>
+ 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <style type="text/css">body, a:hover {cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym46.cur), progress !important;}</style> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <style type="text/css">
+   body,td,th {
+   color: #000;
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   position: relative;
+   font-family: 'Rajdhani', sans-serif;
+   background-image: url("https://websky.com.tr/1.jpg");
+   background-color:#000000;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   text-shadow: 3px 3px 2px black, 6px 6px 5px black, 6px 6px 5px black;
+   a:visited, a:hover, a:focus {
+     text-decoration: none;
+     color: white;
+  }
+   }
+</style> 
+    <center>
+     <font size="3" color="red">★ ★ </font>
+     <font size="3" color="white">★★ </font>
+    </center> 
+    <style>img {
+  max-width: 100%;
+  -webkit-filter: drop-shadow(4px 4px 4px #000);
+  filter: drop-shadow(4px 4px 4px #000);
+}</style> 
+    <img src="https://i.pinimg.com/originals/63/bf/6e/63bf6ee2c697ae29308ce4f8d71e3196.jpg" border="0" width="200" height="200" style="object-fit: scale-down; max-width: 100%" onclick="location.href = "> 
+    <!--<br>
+<img src="https://i.imgur.com/rFIT1s5.jpg" border="0" width="500" style="object-fit: scale-down; max-width: 100%" onclick="location.href = '';">--> 
+    <div style="line-height:40%;"> 
+     <br> 
+    </div> 
+    <div id="center"> 
+     <font color="white" size="6" face="'Rajdhani', sans-serif"> <font color="#FFFF00"> </font> <a style="text-decoration:none" onclick="location.href = '#';"> Hacked by <font color="#ff0000" onclick="location.href = '';">NESAS_0DAY&BEROFC</font></a><font color="#ff0000" onclick="location.href = '#';"><img src="https://i.imgur.com/Imsbaxc.gif" style="margin:0 0 -0px 0;width:20px;height:20px;"></font> 
+      <div style="line-height:10%;">
+       <br> 
+	   
+      </div> 
+      <!--<img src="https://i.imgur.com/cwfwBp8.gif" width="300" height="40" style="margin-left:0px;"><br>--> <img src="https://i.imgur.com/aKTrI5Y.gif" width="200" style="object-fit: scale-down; max-width: 100%"><br> <font color="white" size="5" face="Share Tech Mono">HAK YİYEN HERKESE ANSIZIN BİR GECE,
+admin...
+ hiç bir sistem göründüğü gibi güvenlikli değildir
+      </font><br> <font color="white" size="5" face="Share Tech Mono"><font color="#ff0000" onclick="location.href = '';">İnstagram</font> : nesas_0day </font><br> <font color="white" size="5" face="Share Tech Mono"> </font><br> <font color="white" size="5" face="Share Tech Mono"><br>|  LORD DEFACER TEAM! |</font> 
+            </font><br> <font color="white" size="5" face="Share Tech Mono"><font color="#ff0000" onclick="location.href = '';">gretz</font> : nesas_0day - ardax_0day - glock_0day-zwoski - brefoc - kızılırmak&yuis - longhorseyt - flexia_0day - ransower.rar - myster - harunts2 </font><br> <font color="white" size="5" face="Share Tech Mono"> </font><br> <font color="white" size="5" face="Share Tech Mono"><br>|  Turkish Hacker Was Here ! |</font> 
+ 
+      <div id="center"> 
+       <font color="black" size="5" face="'Averia Sans Libre'" style="text-shadow: 0px 1px 10px lime;"></font>
+      </div> <img src="https://i.imgur.com/cwfwBp8.gif" width="300" height="40" style="margin-left:0px;"><br> 
+      <div id="center">
+       <img src="https://i.imgur.com/8zYLCbs.gif" style="margin:0 0 -0px 0;width:25px;height:25px;">
+       <font color="white" size="6" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""> </font>
+       <img src="https://i.imgur.com/HyXzLUG.gif" style="margin:0 0 -0px 0;width:25px;height:25px;">
+       <br>
+	   
+      </div> 
+      <!--<div id="center"><img src="https://i.imgur.com/nNhAn7g.gif" style="margin:0 0 -0px 0;width:30px;height:30px;"><font color="white" size="4" face="droid arabic kufi" text-shadow: 2px 2px" style="background-image: url('https://i.imgur.com/KpGkxmO.gif');width='5'">بێگانە ئەگەر بتڕێ ئەڵێن تڕی فەرموو</a><img src="https://i.imgur.com/BbSScWJ.gif" style="margin:0 0 -0px 0;width:30px;height:30px;"></div></font></div></div></center></a></font></div>--> 
+      <div style="line-height:40%;"> 
+       <br> 
+      </div>
+<br>
+<style type="text/css">
+            p {
+                margin: 0;
+            }
+
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+
+            .overlay, .scare {
+                background-color: transparent;
+
+            }
+
+            p.overlay-title {
+                font-size: 24px;
+                font-weight: 900;
+                color: black;
+                line-height: 1;
+
+                margin-bottom: 16px;
+            }
+
+            .overlay-button {
+                position: absolute;
+                display: inline-flex;
+                align-items: center;
+
+                height: 40px;
+
+                padding-right: 24px;
+                padding-left: 24px;
+
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+
+                border-radius: 4px;
+
+                margin: 4px;
+
+                cursor: pointer;
+            }
+
+            .overlay-buttons-wrapper {
+                margin: -8px;
+            }
+
+            #accept-button {
+              z-index: 100px;
+                color: rgb(255, 34, 34);
+                border: 0px solid rgb(253, 253, 253);
+            }
+
+            #decline-button {
+                color: rgb(255, 34, 34);
+
+                border: 2px solid rgb(253, 253, 253);
+            }
+
+            p.overlay-description {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.5);
+                line-height: 1.25;
+
+                margin-bottom: 32px;
+            }
+
+            a.overlay-link {
+                display: inline-block;
+
+                text-decoration: none;
+
+                font-size: 16px;
+                font-weight: 500;
+                color: rgb(132, 94, 194);
+                line-height: 1;
+
+                position: relative;
+
+                margin-top: 16px;
+            }
+
+            a.overlay-link::before {
+                position: absolute;
+
+                content: "";
+
+                height: calc(50% + 4px);
+                width: calc(100% + 8px);
+
+                bottom: -4px;
+                left: -4px;
+
+                background-color: rgba(132, 94, 194, 0.1);
+            }
+
+            .overlay-body {
+                max-width: 512px;
+
+                text-align: center;
+
+                font-family: "Inter", sans-serif;
+            }
+
+            .overlay.hidden {
+                display: none;
+            }
+
+            .overlay {
+                z-index: 2;
+background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                 overflow: hidden;
+            }
+
+            .scare {
+                z-index: 1;
+            }
+
+            video {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+margin-top: 500px;
+            }
+            xnvideo {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+      video#video::-webkit-media-controls-enclosure {
+        display:none !important;
+      }
+    </style>
+
+<script>
+function textt() {
+  var hid = document.getElementsByClassName("exp");
+    // Emulates jQuery $(element).is(':hidden');
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+}
+</script> 
+<script>
+function videoo() {
+  var hid = document.getElementsByClassName("video");
+    // Emulates jQuery $(element).is(':hidden');
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+}
+  var hid = document.getElementsByClassName("scare");
+    // Emulates jQuery $(element).is(':hidden');
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+</script>
+ <style>
+      .exp{visibility: hidden;}
+      .hide{
+      display:none;
+      }
+      .show{
+      display:block;
+}
+</style> </font>
+      </div><font color="red" size="5" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""> </font></font>
+    </div>
+    <font color="white" size="6" face="'Rajdhani', sans-serif"><font color="red" size="5" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""> </font></font>
+   </div>
+   <font color="white" size="6" face="'Rajdhani', sans-serif"><font color="red" size="5" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""> 
+     <meta name="keywords" content="v3xus , hacked by v3xus , Hacked By v3xus , HaN , hacked by HaN , Hacked By HaN"> 
+     <div class="scare"> 
+     </div> <script type="text/javascript">
+            const video = document.getElementById("video");
+            const overlay = document.getElementById("overlay");
+            const declineButton = document.getElementById("decline-button");
+            const acceptButton = document.getElementById("accept-button");
+
+            let hasClicked;
+
+        window.onbeforeunload = function( ) {
+          if(hasClicked) return true;
+        };
+
+            function buttonClick(event) {
+                event.preventDefault();
+                if(!hasClicked) hasClicked = true;
+                overlay.classList.add("hidden");
+                video.play();
+                videoClick();
+window.scrollTo(0,document.body.scrollHeight);
+textt();
+            }
+
+            function videoClick(event) {
+                if(event) event.preventDefault();
+                // if not fullscreen
+                const { documentElement } = document;
+          if(documentElement.requestFullscreen) documentElement.requestFullscreen();
+          else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+          else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+          else if(documentElement.msRequestFullscreen) full.msRequestFullscreen();
+            }
+
+            acceptButton.addEventListener("click", buttonClick);
+            declineButton.addEventListener("click", buttonClick);
+            video.addEventListener("click", videoClick);
+    </script> <script>
+            document.onkeydown = function (e) {
+                    return false;
+            }
+            </script> <script>
+              document.addEventListener("contextmenu", function(e){
+                  e.preventDefault();
+              }, false);
+              </script> 
+     <div class="exp"> 
+      <div id="center"> 
+       <font color="white" size="7" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"="">nesas</font></font>
+      </div>
+      <font color="white" size="7" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""> 
+       <!--<div id="center"> <font color="white" size="4" face="droid arabic kufi" text-shadow: 2px 2px">فريق سايبر باك/a></div>--> </font>
+     </div><font color="white" size="7" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""> <font color="#FF0000"></font><br> </font></font></font>
+  </center>
+  <font color="white" size="6" face="'Rajdhani', sans-serif"><font color="red" size="5" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""><font color="white" size="7" face="'Rajdhani', sans-serif" text-shadow:="" 2px="" 2px"=""> </font> <script type="ce222c656afc4da03b6a67db-text/javascript">
+  document.onkeydown = function (e) {
+          return false;
+  }
+  </script> <script type="ce222c656afc4da03b6a67db-text/javascript">vertical-align: baseline;
+    document.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+    }, false);
+    </script> 
+    <!--<audio autoplay="true" loop src="">--> </font></font> 
+  
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 323.101px; top: -372.802px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 262px; top: -92px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 3.47938px; top: -537.085px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;   left: 3.45531px; top: -481.397px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;   left: 22.3265px; top: -461.808px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 272px; top: -352px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 192.348px; top: 0.465134px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 276px; top: -274px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 238.991px; top: -434.354px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 165.576px; top: -99.4648px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 295px; top: -438px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 0px; top: -154.551px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 248.116px; top: -400.246px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 332.923px; top: -105.817px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 42.8181px; top: -132.825px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 167.979px; top: -286.966px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 135.284px; top: -408.966px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 295.852px; top: -161.539px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 190.809px; top: -293.739px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 74.8407px; top: -125.229px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 263.899px; top: -231.904px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 320.967px; top: -59.0061px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 38.7375px; top: -515.33px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 221.936px; top: -396.698px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 167.06px; top: -269.814px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 251.689px; top: -216.255px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 222.142px; top: -352.73px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 0.25; padding: 0px; margin: 0px; font-size: 3.5px; line-height: 14.5px; text-align: center;  left: 126.32px; top: -39.0965px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 271.303px; top: -65.6889px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 249.036px; top: -253.696px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 308.394px; top: -502.166px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 15.2865px; top: -246.732px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 115px; top: -498px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 125.714px; top: -455.16px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 301.897px; top: -553.75px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 3.75948px; top: -436.787px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 269.905px; top: -466.077px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 206.757px; top: -517.813px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 155px; top: -65px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 10.4041px; top: -192.715px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 143.854px; top: -306.132px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 139.186px; top: -227.409px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 73.3126px; top: -175.027px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 0.35; padding: 0px; margin: 0px; font-size: 3.5px; line-height: 13.9px; text-align: center;  left: 80.6245px; top: -416.492px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 81.0376px; top: -1.41903px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 210.483px; top: -247.116px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 67.4612px; top: -107.659px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 3.62493px; top: 10.1964px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 261.975px; top: -84.2699px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 0.1; padding: 0px; margin: 0px; font-size: 1px; line-height: 15.4px; text-align: center;  left: 35.1215px; top: -260.137px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 47.5767px; top: -195.376px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 194px; top: -373px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 322.175px; top: -318.525px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 224px; top: -510px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 229.602px; top: -203.153px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 293.836px; top: -554.988px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 192.7px; top: -286.999px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 300.01px; top: -499.628px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 275.294px; top: -302.22px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 295.675px; top: -385.571px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 123.849px; top: -184.494px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 92.8074px; top: -169.062px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 146px; top: -91px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 302.549px; top: -458.361px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 152.002px; top: -255.599px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 155px; top: -405px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 288px; top: -344px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 212px; top: -130px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 18px; top: -393px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 31px; top: -365px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 48px; top: -377px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 110px; top: -439px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 238px; top: -33px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 194px; top: -118px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 231px; top: -378px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 209px; top: -259px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 271px; top: -165px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 53px; top: -40px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 228px; top: -190px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 202px; top: -414px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 136px; top: -195px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 33px; top: -204px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 211px; top: -197px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 132px; top: -195px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 225px; top: -191px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 159px; top: -486px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 244px; top: -147px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 300px; top: -554px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 238px; top: -554px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 188px; top: -580px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 27px; top: -228px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 11px; top: -114px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 238px; top: -11px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 59px; top: -476px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 117px; top: -376px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 256px; top: -365px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 72px; top: -15px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 30px; top: -90px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 143px; top: -372px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 13px; top: -266px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 181px; top: -292px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 155px; top: -126px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 254px; top: -387px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 144px; top: -366px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 290px; top: -576px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 63px; top: -77px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 59px; top: -247px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 163px; top: -171px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 91px; top: -136px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 269px; top: -89px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 190px; top: -35px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 112px; top: -369px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 267px; top: -128px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 113px; top: -588px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 105px; top: -435px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 249px; top: -350px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 273px; top: -255px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 233px; top: -80px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 16px; line-height: 10px; text-align: center;  left: 213px; top: -224px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 310px; top: -454px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 21px; top: -23px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 245px; top: -49px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 14px; line-height: 10px; text-align: center;  left: 196px; top: -600px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 18px; line-height: 10px; text-align: center;  left: 29px; top: -553px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 290px; top: -31px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 12px; line-height: 10px; text-align: center;  left: 220px; top: -150px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 20px; line-height: 10px; text-align: center;  left: 235px; top: -243px;">
+   •
+  </div>
+  <div style="color: red; position: absolute; width: 8px; height: 8px; font-family: arial, verdana; overflow: hidden; font-weight: normal; z-index: 0; display: block; bottom: auto; opacity: 1; padding: 0px; margin: 0px; font-size: 10px; line-height: 10px; text-align: center;  left: 293px; top: -99px;">
+   •
+  </div>
+  
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müzik Embed</title>
+</head>
+<body>
+
+    <audio controls autoplay>
+        <source src="https://mp3files.cc/dl/UGtSUytoaHF5azRDMlllMGgvQVBYZz/little-dark-age-speed-up.mp3" type="audio/mp3">
+        Tarayıcınız bu sesi desteklemiyor.
+    </audio>
+
+</body>
+</html>
+
